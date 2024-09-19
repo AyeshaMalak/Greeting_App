@@ -1,53 +1,100 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-body{
-  
-   
+
+body {
     font-family: sans-serif;
     padding: 4rem;
     background-color: rgb(15, 82, 104);
     color: #fff;
-    
-    
+    overflow-x: hidden;
 }
-.image{
-    padding-left: 10rem;
-    height: 50rem;
-    width: 50rem;
 
-
+.image {
+    width: 100%;
+    max-width: 500px; /* To ensure the image doesn't grow too large on bigger screens */
+    height: auto;
+    padding-left: 0;
+    margin: auto;
+    display: block; /* Center image on small screens */
 }
-.div1{
+
+.div1 {
     display: flex;
+    flex-wrap: wrap; /* Allows stacking on smaller screens */
+    justify-content: center;
+    align-items: center;
 }
-.div2{
-    padding-top: 18rem;
-    padding-left: 8rem;
+
+.div2 {
+    padding: 2rem;
+    text-align: center;
 }
-.btn{
+
+.btn {
     border-radius: 0.5rem;
-    background-color:aqua;
+    background-color: aqua;
     color: black;
     height: 3rem;
-    width: 8rem;
+    width: 10rem;
     margin-top: 1rem;
-    margin-left: 18rem;
-
 }
-.btn:hover{
-    background-color:black;
+
+.btn:hover {
+    background-color: black;
     color: gray;
 }
-p{  
+
+p {
     padding-top: 1rem;
     color: white;
-    font-size: 2rem;
-    
-}
-h1{
-    font-size: 3rem;
+    font-size: 1.5rem;
 }
 
+h1 {
+    font-size: 2rem;
+}
+
+/* RESPONSIVE DESIGN */
+@media screen and (max-width: 768px) {
+    body {
+        padding: 2rem;
+    }
+
+    .div2 {
+        padding: 2rem 0;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .btn {
+        margin-left: 0; /* Center button on smaller screens */
+    }
+
+    .image {
+        max-width: 80%;
+        padding: 0;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    body {
+        padding: 1rem;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 1.2rem;
+    }
+
+    .btn {
+        width: 100%;
+    }
+}
